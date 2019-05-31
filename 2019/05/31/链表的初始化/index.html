@@ -2,19 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: HOW - MaChaoran</title>
+<title>结构体，链表，线性表相关 - MaChaoran</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="MaChaoran">
-<meta property="og:url" content="http://yoursite.com/categories/HOW/index.html">
+    <meta name="description" content="12345678910typedef struct LNode&amp;#123;     ElemType data;     struct LNode *next;&amp;#125;LNode,*pLNode;LNode *Link;    //声明一个struct LNode型变量L             //等价于 struct LNode L;pLNode Ptrl;  //声明一个struct">
+<meta name="keywords" content="链表&#x2F;Link List">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结构体，链表，线性表相关">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/链表的初始化/index.html">
 <meta property="og:site_name" content="MaChaoran">
+<meta property="og:description" content="12345678910typedef struct LNode&amp;#123;     ElemType data;     struct LNode *next;&amp;#125;LNode,*pLNode;LNode *Link;    //声明一个struct LNode型变量L             //等价于 struct LNode L;pLNode Ptrl;  //声明一个struct">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-31T15:02:51.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaChaoran">
+<meta name="twitter:title" content="结构体，链表，线性表相关">
+<meta name="twitter:description" content="12345678910typedef struct LNode&amp;#123;     ElemType data;     struct LNode *next;&amp;#125;LNode,*pLNode;LNode *Link;    //声明一个struct LNode型变量L             //等价于 struct LNode L;pLNode Ptrl;  //声明一个struct">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                <img src="/images/logo.svg" alt="结构体，链表，线性表相关" height="28">
             
             </a>
         </div>
@@ -135,34 +140,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">HOW</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-29T15:55:00.000Z">2019-05-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/HOW/">HOW</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-05-31T14:39:00.000Z">2019-05-31</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 95 words)
+                    a few seconds read (About 88 words)
                 </span>
                 
                 
@@ -171,22 +160,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/29/skill/">如何把本地文件推到github</a>
+                结构体，链表，线性表相关
             
         </h1>
         <div class="content">
             <hr>
-<h4 id="如何把本地文件推到github"><a href="#如何把本地文件推到github" class="headerlink" title="如何把本地文件推到github"></a>如何把本地文件推到github</h4><h4 id="How-to-push-my-files-to-github"><a href="#How-to-push-my-files-to-github" class="headerlink" title="How to push my files to github"></a>How to push my files to github</h4><h5 id="不间断更新"><a href="#不间断更新" class="headerlink" title="不间断更新"></a>不间断更新</h5>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typedef struct LNode</span><br><span class="line">&#123;</span><br><span class="line">     ElemType data;</span><br><span class="line">     struct LNode *next;</span><br><span class="line">&#125;LNode,*pLNode;</span><br><span class="line"></span><br><span class="line">LNode *Link;    //声明一个struct LNode型变量L</span><br><span class="line">             //等价于 struct LNode L;</span><br><span class="line">pLNode Ptrl;  //声明一个struct LNode* 型指针变量Ptrl</span><br><span class="line">               //等价于写 struct LNode *Ptrl</span><br></pre></td></tr></table></figure>
+<h6 id="其中建议用-Link"><a href="#其中建议用-Link" class="headerlink" title="其中建议用 *Link"></a>其中建议用 *Link</h6><p>如果不用指针，如LNode *Link，参考链表写法，<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typedef struct  LNode *pList  </span><br><span class="line">struct LNode</span><br><span class="line">&#123;</span><br><span class="line">   ElemType data;</span><br><span class="line">   pList  next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct LNode L;</span><br><span class="line">pList PtrL;</span><br></pre></td></tr></table></figure></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/29/skill/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/链表-Link-List/">链表/Link List</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -194,9 +186,42 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/30/pat-plans/">
+                <span class="level-item">what is this “ElemType”</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -750,7 +775,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                    <img src="/images/logo.svg" alt="结构体，链表，线性表相关" height="28">
                 
                 </a>
                 <p class="is-size-7">
