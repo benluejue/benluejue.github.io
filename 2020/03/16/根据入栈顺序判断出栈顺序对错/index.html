@@ -2,19 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/10 - MaChaoran</title>
+<title>根据入栈顺序判断出栈顺序对错 - MaChaoran</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="MaChaoran">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+    <meta name="description" content="根据入栈顺序判断出栈顺序对错">
+<meta name="keywords" content="常见算法,leetcode,栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="根据入栈顺序判断出栈顺序对错">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/根据入栈顺序判断出栈顺序对错/index.html">
 <meta property="og:site_name" content="MaChaoran">
+<meta property="og:description" content="根据入栈顺序判断出栈顺序对错">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-20T07:26:08.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaChaoran">
+<meta name="twitter:title" content="根据入栈顺序判断出栈顺序对错">
+<meta name="twitter:description" content="根据入栈顺序判断出栈顺序对错">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                <img src="/images/logo.svg" alt="根据入栈顺序判断出栈顺序对错" height="28">
             
             </a>
         </div>
@@ -134,31 +139,86 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        October 2019
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-16T03:11:00.000Z">2020-03-16</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-09T06:34:00.000Z">2019-10-09</time>
-                        <a href="/2019/10/09/DOSBOX汇编指令/" class="has-link-black-ter is-size-6">DOSBOX汇编指令</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/coding/">coding</a>
                 </div>
-            </article>
-        
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 113 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                根据入栈顺序判断出栈顺序对错
+            
+        </h1>
+        <div class="content">
+            <h3 id="根据入栈顺序判断出栈顺序对错"><a href="#根据入栈顺序判断出栈顺序对错" class="headerlink" title="根据入栈顺序判断出栈顺序对错"></a>根据入栈顺序判断出栈顺序对错</h3><a id="more"></a>
+<p>参考了CSDN<a href="https://blog.csdn.net/Touch_Dream/article/details/79427313?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">这篇文章</a></p>
+<p>在pat甲的1051采用了此算法<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 根据入栈顺序判断出栈顺序对错</span><br><span class="line">bool isTrue(vector&lt;int&gt; pushv, vector&lt;int&gt; popv) &#123;</span><br><span class="line">	if (pushv.empty())</span><br><span class="line">		return false;</span><br><span class="line">	stack&lt;int&gt; temp;</span><br><span class="line">	for (int i = 0, j = 0; i &lt; pushv.size(); i++) &#123;</span><br><span class="line">		// 入栈</span><br><span class="line">		temp.push(pushv[i]);</span><br><span class="line">		</span><br><span class="line">        while ( !temp.empty() &amp;&amp; j &lt; popv.size() </span><br><span class="line">        &amp;&amp; temp.top() == popv[j]) &#123;</span><br><span class="line">        temp.pop();</span><br><span class="line">        j++;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return temp.empty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/leetcode/">leetcode</a>, <a class="has-link-grey -link" href="/tags/常见算法/">常见算法</a>, <a class="has-link-grey -link" href="/tags/栈/">栈</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/16/从数组到vevtor/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">vector</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/13/字符串处理/">
+                <span class="level-item">字符串处理</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -806,7 +866,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                    <img src="/images/logo.svg" alt="根据入栈顺序判断出栈顺序对错" height="28">
                 
                 </a>
                 <p class="is-size-7">

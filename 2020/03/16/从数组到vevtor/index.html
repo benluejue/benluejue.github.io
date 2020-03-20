@@ -2,19 +2,23 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/10 - MaChaoran</title>
+<title>vector - MaChaoran</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="MaChaoran">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+    <meta name="description" content="vector 初步使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vector">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/从数组到vevtor/index.html">
 <meta property="og:site_name" content="MaChaoran">
+<meta property="og:description" content="vector 初步使用">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-16T03:33:58.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaChaoran">
+<meta name="twitter:title" content="vector">
+<meta name="twitter:description" content="vector 初步使用">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                <img src="/images/logo.svg" alt="vector" height="28">
             
             </a>
         </div>
@@ -134,31 +138,72 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        October 2019
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-16T03:32:21.000Z">2020-03-16</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-09T06:34:00.000Z">2019-10-09</time>
-                        <a href="/2019/10/09/DOSBOX汇编指令/" class="has-link-black-ter is-size-6">DOSBOX汇编指令</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 110 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                vector
+            
+        </h1>
+        <div class="content">
+            <p>vector 初步使用<br><a id="more"></a><br>初始化</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//  当不知道有多少元素 vector为空 容器中没有元素</span><br><span class="line">vector&lt;int&gt;ilist1;</span><br><span class="line">// 拷贝ilist1</span><br><span class="line">vector&lt;int&gt;ilist2 = ilist1;</span><br><span class="line">// 初始ilist为 一串数值</span><br><span class="line">vector&lt;int&gt; ilist&#123;1,2,3,4,5,6,7&#125;;</span><br><span class="line">// 为3,4,5,6,</span><br><span class="line">vector&lt;int&gt;ilist3(ilist.begin()+2, ilist.end()-1);</span><br><span class="line">// 默认初始化包含七个元素</span><br><span class="line">vector&lt;int&gt;ilist4(7);</span><br><span class="line">// 7个值为3的int</span><br><span class="line">vector&lt;int&gt;ilist5(7,3);</span><br><span class="line"></span><br><span class="line">// 这个不大会用 当成二维vector的一种写法</span><br><span class="line">vector&lt;int&gt;ilist[100]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">二维vector赋值</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;int&gt;&gt; trust &#123;&#123;1,2&#125;,&#123;1,2&#125;&#125;;</span><br><span class="line">cout&lt;&lt;trust[0][0];</span><br><span class="line">数组加值</span><br><span class="line"></span><br><span class="line">vector&lt;int&gt;v;</span><br><span class="line">v.push_back( c ); // vector的末尾 添加一个数</span><br><span class="line">v.pop_back();</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/20/二分法/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">二分法</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/16/根据入栈顺序判断出栈顺序对错/">
+                <span class="level-item">根据入栈顺序判断出栈顺序对错</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -806,7 +851,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                    <img src="/images/logo.svg" alt="vector" height="28">
                 
                 </a>
                 <p class="is-size-7">

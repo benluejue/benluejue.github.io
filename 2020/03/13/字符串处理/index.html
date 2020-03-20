@@ -2,19 +2,23 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/10 - MaChaoran</title>
+<title>字符串处理 - MaChaoran</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="MaChaoran">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+    <meta name="description" content="经常用到的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串处理">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/字符串处理/index.html">
 <meta property="og:site_name" content="MaChaoran">
+<meta property="og:description" content="经常用到的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-13T15:34:38.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaChaoran">
+<meta name="twitter:title" content="字符串处理">
+<meta name="twitter:description" content="经常用到的">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                <img src="/images/logo.svg" alt="字符串处理" height="28">
             
             </a>
         </div>
@@ -134,31 +138,81 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        October 2019
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-13T15:26:35.000Z">2020-03-13</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-09T06:34:00.000Z">2019-10-09</time>
-                        <a href="/2019/10/09/DOSBOX汇编指令/" class="has-link-black-ter is-size-6">DOSBOX汇编指令</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 86 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                字符串处理
+            
+        </h1>
+        <div class="content">
+            <h2 id="经常用到的"><a href="#经常用到的" class="headerlink" title="经常用到的"></a>经常用到的</h2><a id="more"></a>
+<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="常见的转换操作"><a href="#常见的转换操作" class="headerlink" title="常见的转换操作"></a>常见的转换操作</h2><ul>
+<li>int转string</li>
+</ul>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">to_string()</span><br><span class="line"><span class="hljs-comment">// vs2010得这样写</span></span><br><span class="line">to_string(<span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;(sum))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>string转int</li>
+</ul>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 即使是负数也没问题</span></span><br><span class="line">s = <span class="hljs-string">"-123"</span>;</span><br><span class="line">atoi( s1.c_str() );</span><br></pre></td></tr></table></figure>
+<h2 id="使用getline注意事项"><a href="#使用getline注意事项" class="headerlink" title="使用getline注意事项"></a>使用getline注意事项</h2><p>如果在使用getline前，要使用scanf或者cin，先使用一些getchar(),读取换行符</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/16/根据入栈顺序判断出栈顺序对错/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">根据入栈顺序判断出栈顺序对错</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/13/拟机没有网络的问题/">
+                <span class="level-item">虚拟机没有网络的问题</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -806,7 +860,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                    <img src="/images/logo.svg" alt="字符串处理" height="28">
                 
                 </a>
                 <p class="is-size-7">
