@@ -2,19 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives - MaChaoran</title>
+<title>kmp算法与改进的kmp算法 - MaChaoran</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="MaChaoran">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+    <meta name="description" content="kmp算法还不太理解get_next的运行过程">
+<meta name="keywords" content="leetcode,数据结构,kmp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kmp算法与改进的kmp算法">
+<meta property="og:url" content="http://yoursite.com/2020/03/21/kmp算法/index.html">
 <meta property="og:site_name" content="MaChaoran">
+<meta property="og:description" content="kmp算法还不太理解get_next的运行过程">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-21T02:53:34.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaChaoran">
+<meta name="twitter:title" content="kmp算法与改进的kmp算法">
+<meta name="twitter:description" content="kmp算法还不太理解get_next的运行过程">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                <img src="/images/logo.svg" alt="kmp算法与改进的kmp算法" height="28">
             
             </a>
         </div>
@@ -134,79 +139,79 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-<div class="card widget">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-21T02:50:00.000Z">2020-03-21</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 152 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                kmp算法与改进的kmp算法
+            
+        </h1>
+        <div class="content">
+            <h2 id="kmp算法"><a href="#kmp算法" class="headerlink" title="kmp算法"></a>kmp算法</h2><h3 id="还不太理解get-next的运行过程"><a href="#还不太理解get-next的运行过程" class="headerlink" title="还不太理解get_next的运行过程"></a>还不太理解get_next的运行过程</h3><a id="more"></a>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_next</span><span class="hljs-params">( <span class="hljs-built_in">string</span> s, <span class="hljs-keyword">int</span> next[] )</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> j = <span class="hljs-number">-1</span>;</span><br><span class="line">        next[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>( i &lt; s.size() - <span class="hljs-number">1</span>)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>( j == <span class="hljs-number">-1</span> || s[i] == s[j])&#123;</span><br><span class="line">                i++; j++;</span><br><span class="line">                next[i] = j;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">                j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-built_in">string</span> haystack, <span class="hljs-built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>( needle == <span class="hljs-string">""</span>)    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-comment">/**********kmp***********/</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> next[ needle.size() ];</span><br><span class="line"></span><br><span class="line">        get_next( needle,next );</span><br><span class="line">        <span class="hljs-comment">//cout&lt;&lt;next[0];</span></span><br><span class="line">        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> len1 = haystack.length();</span><br><span class="line">        <span class="hljs-keyword">int</span> len2 = needle.length();</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">while</span>( i &lt; len1 &amp;&amp; j &lt; len2 )&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>( j == <span class="hljs-number">-1</span> || haystack[i] == needle[j] )&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;<span class="hljs-keyword">else</span></span><br><span class="line">                j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-comment">// cout&lt;&lt;i;</span></span><br><span class="line">       <span class="hljs-comment">// cout&lt;&lt;needle.size()&lt;&lt;endl;</span></span><br><span class="line">        <span class="hljs-keyword">if</span>(j &gt;= len2 )</span><br><span class="line">                <span class="hljs-keyword">return</span> i - len2 ;</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>改进的kmp算法</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 改进的kpm算法</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_nextval</span><span class="hljs-params">( <span class="hljs-built_in">string</span> s, <span class="hljs-keyword">int</span> nextval[] )</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> j = <span class="hljs-number">-1</span>;</span><br><span class="line">        nextval[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>( i &lt; s.size() - <span class="hljs-number">1</span>)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>( j == <span class="hljs-number">-1</span> || s[i] == s[j])&#123;</span><br><span class="line">                i++; j++;</span><br><span class="line">                <span class="hljs-keyword">if</span>( s[i] != s[j])   nextval[i] = j;</span><br><span class="line">                <span class="hljs-keyword">else</span> nextval[i] = nextval[j];</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">                j = nextval[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strStr</span><span class="hljs-params">(<span class="hljs-built_in">string</span> haystack, <span class="hljs-built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>( needle == <span class="hljs-string">""</span>)    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-comment">/**********kmp***********/</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> nextval[ needle.size() ];</span><br><span class="line"></span><br><span class="line">        get_nextval( needle,nextval );</span><br><span class="line">        <span class="hljs-comment">//cout&lt;&lt;next[0];</span></span><br><span class="line">        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> len1 = haystack.length();</span><br><span class="line">        <span class="hljs-keyword">int</span> len2 = needle.length();</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">while</span>( i &lt; len1 &amp;&amp; j &lt; len2 )&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>( j == <span class="hljs-number">-1</span> || haystack[i] == needle[j] )&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;<span class="hljs-keyword">else</span></span><br><span class="line">                j = nextval[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-comment">// cout&lt;&lt;i;</span></span><br><span class="line">       <span class="hljs-comment">// cout&lt;&lt;needle.size()&lt;&lt;endl;</span></span><br><span class="line">        <span class="hljs-keyword">if</span>(j &gt;= len2 )</span><br><span class="line">                <span class="hljs-keyword">return</span> i - len2 ;</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/kmp/">kmp</a>, <a class="has-link-grey -link" href="/tags/leetcode/">leetcode</a>, <a class="has-link-grey -link" href="/tags/数据结构/">数据结构</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <a href="/2019/05/17/test/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/images/daily.png" alt="test">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-05-17T14:44:00.000Z">2019-05-17</time>
-                        <a href="/2019/05/17/test/" class="has-link-black-ter is-size-6">test</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/test1/">test1</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-05-17T11:44:37.778Z">2019-05-17</time>
-                        <a href="/2019/05/17/hello-world/" class="has-link-black-ter is-size-6">马超然</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
         </div>
     </div>
 </div>
 
-    
 
-    
+
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/20/二分法/">
+                <span class="level-item">二分法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/page/3/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/archives/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -878,7 +883,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="MaChaoran" height="28">
+                    <img src="/images/logo.svg" alt="kmp算法与改进的kmp算法" height="28">
                 
                 </a>
                 <p class="is-size-7">
